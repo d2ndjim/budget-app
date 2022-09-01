@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  resources :records
-  resources :categories
+  get 'splash/index'
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :categories, only: [:index, :show, :new, :create, :destroy] do
+    resources :records, only: [ :new, :show, :create, :destroy]
+  end
+
+  authenticated :user do
+  root :to => 'categories#index', as: :authenticated_root
+  end
+  root 'splash#index'
 end
