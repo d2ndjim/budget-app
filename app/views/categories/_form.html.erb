@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.number_field :user_id, id: :category_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
 
   <div>

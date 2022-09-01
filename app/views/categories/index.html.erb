@@ -1,13 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
+<nav class="bg-[#3778C2]">
+  <ul>
+    <li>
+    <a href="/"><i class="fa fa-navicon"></i></a>
+    </li>
+    <li>
+      <h2 class="heading fw-bold">Categories</h2>
+    </li>
+    <li>
+      <%= button_to destroy_user_session_path, method: :delete do %>   
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </li>
+  </ul>
+</nav>
 
 <div id="categories">
   <% @categories.each do |category| %>
     <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
   <% end %>
 </div>
 
