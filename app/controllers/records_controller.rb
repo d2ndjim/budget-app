@@ -11,6 +11,7 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
+    @category = Category.find(params[:category_id])
     @record = Record.new
   end
 
@@ -19,15 +20,14 @@ class RecordsController < ApplicationController
 
   # POST /records or /records.json
   def create
-    @record = Record.new(record_params)
+    @category = Category.find(params[:category_id])
+    @record = @category.records.new(record_params)
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to record_url(@record), notice: 'Record was successfully created.' }
-        format.json { render :show, status: :created, location: @record }
+        format.html { redirect_to category_path(@category), notice: 'Record was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @record.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,9 +48,10 @@ class RecordsController < ApplicationController
   # DELETE /records/1 or /records/1.json
   def destroy
     @record.destroy
+    @category = Category.find(params[:category_id])
 
     respond_to do |format|
-      format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }
+      format.html { redirect_to category_path(@category), notice: 'Record was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

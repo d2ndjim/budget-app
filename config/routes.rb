@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   root :to => 'categories#index', as: :authenticated_root
   end
   root 'splash#index'
+  devise_scope :user do  
+    get '/users/sign_out' => 'devise/sessions#destroy'     
+  end
 end
