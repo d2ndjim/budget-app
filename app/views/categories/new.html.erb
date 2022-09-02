@@ -1,9 +1,16 @@
-<h1>New category</h1>
+<nav class="bg-[#3778C2] text-white">
+  <ul class="flex justify-start gap-5">
+    <li class="text-3xl mr-4">
+      <%= link_to categories_path, class: "text-white" do %>
+        <i class="fa fa-arrow-left"></i>
+      <% end %>
+    </li>
+    <li>
+      <h2 class="font-bold text-3xl">Add Category</h2>
+    </li>
+  </ul>
+</nav>
 
-<%= render "form", category: @category %>
-
-<br>
-
-<div>
-  <%= link_to "Back to categories", categories_path %>
+<div class="my-20">
+  <%= render "form", category: @category %>
 </div>

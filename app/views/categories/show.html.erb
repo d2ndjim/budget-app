@@ -1,7 +1,23 @@
+<nav class="bg-[#3778C2] text-white">
+  <ul class="flex justify-between items-center gap-5 mr-2">
+    <li class="text-3xl">
+      <%= link_to categories_path, class: "text-white" do %>
+        <i class="fa fa-arrow-left"></i>
+      <% end %>
+    </li>
+    <li>
+      <h2 class="font-bold text-xl">Category Details</h2>
+    </li>
+    <li class="font-bold text-5xl">
+      <%= button_to destroy_user_session_path, method: :delete do %>   
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </li>
+  </ul>
+</nav>
 <%= render @category %>
 
 <div>
-  <%= link_to "Back to categories", categories_path %>
 
   <%= button_to "Delete", @category, method: :delete %>
 </div>
