@@ -1,11 +1,13 @@
 <div id="<%= dom_id category %>">
-    <div class="flex justify-between align-center gap-4 my-6 border-solid border-1 bg-[#F5F5F5] px-2 py-4 mx-4">
-      <img>
-        <%= category.icon %>
-      </img>
-      <div>
+    <div class="my-6 border-solid border-1 bg-[#F5F5F5] p-4 mx-4">
+      <div class="flex justify-between md:w-1/2">
+        <div>
+          <%= category.icon %>
+        </div>
+        <div>
         <h5><%= link_to category.name, category %><h5>
-        <h5 class="font-bold text-base">Transaction Total: $<%= category.records.sum(:amount) %></h5>
+        <h5 class="font-bold text-sm">Transaction Total: $<%= category.records.sum(:amount) %></h5>
+      </div>
       </div>
     </div> 
 </div>
