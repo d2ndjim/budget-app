@@ -1,5 +1,5 @@
-<nav class="bg-[#3778C2] text-white p-1 flex justify-center items-center">
-  <ul class="flex justify-between items-center gap-5 mr-2 mt-2">
+<nav class="bg-[#3778C2] text-white p-1">
+  <ul class="flex justify-between items-center mr-6 mt-2">
     <li class="text-3xl">
       <%= link_to categories_path, class: "text-white" do %>
         <i class="fa fa-arrow-left"></i>
@@ -17,26 +17,32 @@
 </nav>
 
 <%= render @category %>
-
-<div class="mx-48 grid place-items-center">
-  <div class="flex flex-col">
-    <h1>Transactions</h1>
-    <div id="records">
-      <% @category.records.each do |record| %>
-        <div class="flex">
-          <p><%= record.name %></p>
-          <p><%= record.amount %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
-<div>
-
-
-
-
-<%= link_to "New record", new_category_record_path(@category) %>
-
-<div>
-  <%= button_to "Delete", @category, method: :delete %>
+<div class="mx-6">
+  <%= button_to "Delete Category", @category, method: :delete, class: "btn btn-danger"%>
 </div>
+
+
+<h1 class="text-center font-bold text-xl mt-12">Transactions</h1>
+<div class="d-flex justify-content-end mr-6 my-3">
+  <%= link_to "New Transaction", new_category_record_path(@category), class: "btn btn-primary" %>
+</div>
+
+<% if @category.records.any? %>
+  <div class="mx-4 md:mx-48 border-solid border-1 bg-[#F5F5F5] p-4">
+    <% @category.records.order(created_at:'DESC').each do |record| %>
+      <div class="flex justify-between items-center border-solid border-1 bg-white py-3 px-4 mb-3">
+        <div class="flex flex-col justify-center pt-1">
+          <p class="font-bold italic"><%= record.name %></p>
+          <p class="font-bold italic"><%= record.created_at.strftime("%d-%b-%Y")%></p></p>
+        </div>
+        <p class="font-bold">$<%= record.amount %></p>
+      </div>
+    <% end %>
+  <div>
+<% else %>
+  <p class="font bold italic text-center text-base">There are no transactions to show. Please Add new Transaction</p>
+<% end %>
+
+
+
+

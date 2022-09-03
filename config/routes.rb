@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show, :new, :create, :destroy] do
     resources :records, only: [ :new, :show, :create, :destroy]
   end
+
   root 'splash#index'
 
   authenticated :user do
-  root :to => 'categories#index', as: :authenticated_root
+    root :to => 'categories#index', as: :authenticated_root
   end
   
   devise_scope :user do  

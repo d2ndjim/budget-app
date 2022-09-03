@@ -22,7 +22,7 @@ class RecordsController < ApplicationController
       end
     end
   end
-  
+
   # DELETE /records/1 or /records/1.json
   def destroy
     @record.destroy
