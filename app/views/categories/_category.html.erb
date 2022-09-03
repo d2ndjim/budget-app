@@ -5,7 +5,7 @@
           <%= category.icon %>
         </div>
         <div>
-        <h5><%= link_to category.name, category %><h5>
+        <h5><%= link_to category.name, category, class: "text-decoration-none" %><h5>
         <h5 class="font-bold text-sm">Transaction Total: $<%= category.records.sum(:amount) %></h5>
       </div>
       </div>
