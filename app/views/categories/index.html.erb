@@ -17,7 +17,9 @@
 <div id="categories">
   <% if @categories.any? %>
     <% @categories.each do |category| %>
-      <%= render category %>
+      <%= link_to category_path(category), class: "text-black no-underline" do %>
+        <%= render category %>
+      <% end %>
     <% end %>
   <% else %>
   <p class="text-base text-center font-bold">There are no categories. Please add a category</p>

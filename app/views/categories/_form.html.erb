@@ -24,7 +24,7 @@
   <br />
   <div class="mx-6">
     <% form.label :icon, required: true, style: "display: block" %>
-    <%= form.text_field :icon, class:"form-control", placeholder:"Icon" %>
+    <%= form.file_field :icon, direct_upload: true, class:"form-control", placeholder:"Icon" %>
   </div>
   <br />
   <div class="mx-6">
