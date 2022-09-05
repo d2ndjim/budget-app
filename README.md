@@ -33,15 +33,6 @@ run `rspec`
 ## [Live demo](https://transtrack.herokuapp.com/)
 
 N/A
-
-## Authors
-
-👤 **Lekan Jimoh**
-
-- GitHub: [@d2ndjim](https://github.com/d2ndjim)
-- Twitter: [@d2ndjim](https://twitter.com/d2ndjim_)
-- LinkedIn: [Lekan Jimoh](https://linkedin.com/in/lekanj)
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
