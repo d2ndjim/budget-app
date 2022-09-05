@@ -27,7 +27,11 @@ gem 'turbo-rails'
 gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem 'figaro', '~> 1.2'
 gem 'jbuilder'
+
+gem 'activestorage-cloudinary-service', '~> 0.2.3'
+gem 'cloudinary', '~> 1.23'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

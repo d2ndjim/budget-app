@@ -29,7 +29,7 @@ class RecordsController < ApplicationController
     @category = Category.find(params[:category_id])
 
     respond_to do |format|
-      format.html { redirect_to category_path(@category), notice: 'Record was successfully destroyed.' }
+      format.html { redirect_to category_path(@category), notice: 'Transaction was removed successfully.' }
       format.json { head :no_content }
     end
   end
