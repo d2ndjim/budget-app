@@ -15,7 +15,7 @@
     </li>
   </ul>
 </nav>
-
+<%= render 'layouts/alerts' %>
 <%= render @category %>
 <div class="mx-6">
   <%= button_to "Delete Category", @category, method: :delete, class: "btn btn-danger"%>

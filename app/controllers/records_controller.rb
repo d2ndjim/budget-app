@@ -16,7 +16,7 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to category_path(@category), notice: 'Record was successfully created.' }
+        format.html { redirect_to category_path(@category), notice: 'Transaction was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
