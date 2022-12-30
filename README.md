@@ -30,7 +30,7 @@ Open a browser and go to: `https://localhost:3000` to view the app.
 `cd budget-app`</br>
 run `rspec`
 
-## [Live demo]()
+## [Live demo](https://tranxtrack.herokuapp.com/)
 
 N/A
 
